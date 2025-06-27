@@ -19,14 +19,14 @@ function createBoard() {
   setup.forEach((piece, i) => {
     const square = document.createElement("div");
     square.classList.add("square");
-    //square.innerHTML = piece;
+    square.innerHTML = piece;
     square.setAttribute("square-id", i);
     board.append(square);
     const row = Math.floor((63 - i) / 8) + 1;
     if (row % 2 === 0) {
-      square.classList.add(i % 2 === 0 ? "white" : "black");
+      square.classList.add(i % 2 === 0 ? "light" : "dark");
     } else {
-      square.classList.add(i % 2 === 0 ? "black" : "white");
+      square.classList.add(i % 2 === 0 ? "dark" : "light");
     }
   });
 }
