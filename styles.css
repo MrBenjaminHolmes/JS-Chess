@@ -1,0 +1,16 @@
+#board {
+  width: 504px;
+  height: 504px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.white {
+  background-color: lightgray;
+}
+
+.square {
+  width: 63px;
+  height: 63px;
+}
