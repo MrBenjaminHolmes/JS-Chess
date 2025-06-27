@@ -7,10 +7,31 @@
 }
 
 .white {
-  background-color: lightgray;
+  background-color: rgb(240, 240, 240);
 }
-
+.black {
+  background-color: rgb(20, 20, 20);
+}
 .square {
   width: 63px;
   height: 63px;
+}
+
+.piece {
+  width: 30px;
+  height: 30px;
+}
+#rook {
+  width: 35px;
+  height: 35px;
+}
+
+#king {
+  width: 41px;
+  height: 41px;
+}
+
+#queen {
+  width: 47px;
+  height: 47px;
 }

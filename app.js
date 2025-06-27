@@ -1,26 +1,33 @@
+import { king, queen, bishop, rook, pawn, knight } from "./pieces.js";
+
 const board = document.querySelector("#board");
 const width = 8;
 
 // prettier-ignore
 const setup = [
-  "rook","knight","bishop","queen","king","bishop","knight","rook",
-  "pawn","pawn","pawn","pawn","pawn","pawn","pawn","pawn",
+  rook,knight,bishop,queen,king,bishop,knight,rook,
+  pawn,pawn,pawn,pawn,pawn,pawn,pawn,pawn,
   "","","","","","","","",
   "","","","","","","","",
   "","","","","","","","",
   "","","","","","","","",
-  "pawn","pawn","pawn","pawn","pawn","pawn","pawn","pawn",
-  "rook","knight","bishop","queen","king","bishop","knight","rook",
+  pawn,pawn,pawn,pawn,pawn,pawn,pawn,pawn,
+  rook,knight,bishop,queen,king,bishop,knight,rook,
 ];
 
 function createBoard() {
   setup.forEach((piece, i) => {
-    const sqaure = document.createElement("div");
-    sqaure.classList.add("square");
-    sqaure.innerHTML = piece;
-    sqaure.setAttribute("sqaure-id", i);
-    sqaure.classList.add("white");
-    board.append(sqaure);
+    const square = document.createElement("div");
+    square.classList.add("square");
+    //square.innerHTML = piece;
+    square.setAttribute("square-id", i);
+    board.append(square);
+    const row = Math.floor((63 - i) / 8) + 1;
+    if (row % 2 === 0) {
+      square.classList.add(i % 2 === 0 ? "white" : "black");
+    } else {
+      square.classList.add(i % 2 === 0 ? "black" : "white");
+    }
   });
 }
 createBoard();
